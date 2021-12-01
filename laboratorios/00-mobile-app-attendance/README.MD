@@ -11,3 +11,17 @@ La aplicación será capaz de realaizar las siguientes tareas:
 ## El diagrama de clases para nuestra aplicación.
 ![Class Diagram](https://user-images.githubusercontent.com/45072377/144273009-0dc8dd99-c18d-4a4e-a249-9f573cdd82b4.png)
 
+## Almacenar datos locales con Sqlite en nuestra aplicación 
+Nuestra aplicación nos permitirá persistir datos cada vez que se lance a aplicación mediante el almacenamiento local usando SQLite.
+
+### Objetivos
+- Comparar las distintas opciones de almacenamiento disponibles en el desarrollo móvil
+- Almacenar datos relacionales en una base de datos SQLite
+- Interactuar con la base de datos asíncronamente para asegurar que la UI permanece responsiva
+
+### Prerrequisitos
+- Visual Studio 2019 (cualquier edición)
+- Familiaridad con C# y .NET
+- Conocimiento básico de SQL y base de datos relacionales
+
+
