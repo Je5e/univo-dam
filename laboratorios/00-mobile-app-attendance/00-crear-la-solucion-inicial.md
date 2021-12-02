@@ -10,3 +10,13 @@
 ![Configure project](https://user-images.githubusercontent.com/45072377/144283646-28d0487f-5d98-4961-bdb3-a66cdaa13244.png)
 
 
+4. En la ventana de **nueva aplicación móvil** seleccionamos **aplicación móvil en blanco**.Y en la opción **desarrollar para...** elegimos **Andriod**
+
+![New project](https://user-images.githubusercontent.com/45072377/144345648-71b30954-561a-4b27-bfa7-9561d73045fa.png)
+
+Hasta aquí tenemos nuestra solución. Es momento de empezar la codificación.
+
+
+
+
+
