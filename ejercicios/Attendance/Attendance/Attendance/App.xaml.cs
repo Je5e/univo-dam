@@ -1,8 +1,4 @@
-﻿using Attendance.Services;
-using Attendance.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Attendance
 {
@@ -13,7 +9,7 @@ namespace Attendance
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+           // DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
