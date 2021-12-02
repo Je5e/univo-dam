@@ -1,5 +1,25 @@
 # Agregar atributos SQLite-net a las clases
 
+Antes de agregar atributos a las clases modelo, necesitamos instalar los siguientes paquetes Nuget: **SQLite-NET y SQLite-NET extension**
+
+#### Agregar SQLite-NET
+
+Selecciona la opción **Administrar paquetes Nuget** del menú contextual del proyecto **AttendanceApp**
+
+![Nuget](https://user-images.githubusercontent.com/45072377/144518374-157330c6-4331-450a-a594-a349b193b089.png)
+
+En el panel de Nuget en la pestaña **Examinar** escribe en la caja de texto **sqlite-net**, selecciona el paquete cuyo autor es Frank Krueger, cuya versión sea: **2.1.0** haz clic en **instalar**
+
+![sqlite-net](https://user-images.githubusercontent.com/45072377/144519076-f4cc873e-113f-4d8a-a079-03b3414a5088.png)
+
+#### Instalar SQLite-NET extension
+
+En el panel de Nuget en la pestaña **Examinar** escribe en la caja de texto **sqlite-net extension**, selecciona el paquete cuyo autor es *TwinCoder*, cuya versión sea: **1.6.2.92** haz clic en **instalar**
+
+![Extensions](https://user-images.githubusercontent.com/45072377/144519395-43293831-c254-4855-8606-c81f60f1a1cb.png)
+
+
+
 Ahora que ya hemos creado el modelo, agreguemos algunos atributos para ayudar al **SQLite.NET** a mapear una clase a una tabla
 
 1. Agreguemos una directiva **using** para el namespace **SQLite** en nuestro archivo **Student.cs**. La directiva permite utilizar los atributos de **SQLite.NET**
