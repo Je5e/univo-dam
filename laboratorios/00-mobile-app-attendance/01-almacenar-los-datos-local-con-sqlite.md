@@ -60,11 +60,9 @@ namespace Attendance.Models
 7. Define las siguientes propiedades a la clase **Attendance**
 
 ```c#
-public int Id { get; set; }
-public Student Student { get; set; }
-public int StudentId { get; set; }
-public Laboratory Lab { get; set; }
-public int LaboratoryId { get; set; }
-public DateTime AttendanceDate { get; set; }
-public bool Attendanced { get; set; }
+    public class Attendance
+    {      
+        public int Id { get; set; }
+        public DateTime AttendanceDate { get; set; }       
+    }
 ```
