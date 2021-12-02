@@ -37,4 +37,58 @@ using SQLite;
         public List<Attendance> AttendancesAt{ get; set; }
     }
 ```
+5. La tabla **Laboratory** queda de la siguiente manera.
+
+```c#
+ [Table("Laboratories")]
+    public class Laboratory
+    {
+        [PrimaryKey,AutoIncrement]
+        public int Id { get; set; }
+
+        public string LabName { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        [OneToMany]
+        public List<Student> Students { get; set; }
+
+        [OneToMany]
+        public List<Attendance> Attendances { get; set; }
+    }
+```
+6. La tabla **Attendance**
+
+```c#
+ [Table("Attendances")]
+    public class Attendance
+    {
+        public int Id { get; set; }
+
+        public DateTime AttendanceDate { get; set; }
+
+        [ForeignKey(typeof(Laboratory))]
+        public int LaboratoryId { get; set; }
+
+        [ManyToOne]
+        public Laboratory Laboratory { get; set; }
+
+        [ManyToMany(typeof(StudentAttendance))]
+        public List<Student> Students { get; set; }
+    }
+```
+7. Por último la tabla **StudentAttendance**
+
+```c#
+[Table("StudentsAttendance")]
+    public class StudentAttendance
+    {
+        [ForeignKey(typeof(Student))]
+        public int StudentId { get; set; }
+
+        [ForeignKey(typeof(Attendance))]
+        public int AttendancesId { get; set; }
+    }
+```
+De esta manera quedarian nuestras entidades decoradas y listas para trabajar y persistir datos a la base de datos.
 
