@@ -95,3 +95,6 @@ public class LaboratoryListViewModel
 </ContentPage>
 ```
 
+Con esto finalizamos nuestra viewModel y la vista.Vamos a crear a continuación la vista para crear un nuevo laboratorio.
+
+
