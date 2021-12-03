@@ -112,3 +112,15 @@
             (Path.Combine(Environment.GetFolderPath
             (Environment.SpecialFolder.LocalApplicationData), "AttendanceDb.db")));
 ```            
+
+---------
+```xaml
+<TabBar>
+        <ShellContent Title="Add Laboratory"
+                      Icon="icon_feed.png"
+                      ContentTemplate="{DataTemplate local:AddNewLaboratoryPage}" />
+        <ShellContent Title="Laboratories"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate local:LaboratoryListPage}" />
+    </TabBar>
+```    
