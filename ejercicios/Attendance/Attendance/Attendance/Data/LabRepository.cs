@@ -16,8 +16,10 @@ namespace Attendance.Data
         public LabRepository(string dbPath)
         {
             conn = new SQLiteConnection(dbPath);
-            conn.CreateTable<Student>();
-            conn.CreateTable<Laboratory>();
+            conn.CreateTable<Models.Student>();
+            conn.CreateTable<Models.Laboratory>();
+            conn.CreateTable<Models.Attendance>();
+            conn.CreateTable<Models.StudentAttendance>();
         }
 
         // TODO: Este método debe guardar objetos con hijos
@@ -26,7 +28,7 @@ namespace Attendance.Data
             try
             {
 
-                conn.InsertWithChildren(newLab); //
+                conn.InsertWithChildren(newLab, recursive: true); //
                 MessageStatus =
                     $"Registro ingresado. Lab Id: {newLab.Id}, Name: {newLab.LabName}";
             }

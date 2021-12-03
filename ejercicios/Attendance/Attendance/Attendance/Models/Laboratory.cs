@@ -15,12 +15,14 @@ namespace Attendance.Models
 
         public string LabName { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
 
-        [OneToMany]
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeInsert |
+            CascadeOperation.CascadeDelete)]
         public List<Student> Students { get; set; }
 
-        [OneToMany]
-        public List<Attendance> Attendances { get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeInsert |
+            CascadeOperation.CascadeDelete)]
+        public List<Attendance> Attendances { get; set; } 
     }
 }

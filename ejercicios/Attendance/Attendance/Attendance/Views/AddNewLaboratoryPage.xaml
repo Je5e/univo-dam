@@ -4,9 +4,49 @@
              x:Class="Attendance.Views.AddNewLaboratoryPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Register a new Laboratory!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="DATOS DE Laboratory:"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            <StackLayout>
+                <Label Text="Name:"/>
+                <Entry Placeholder="Intro Laboratory name"
+                       Text="{Binding LabName}"/>
+
+                <!--DATOS DE LOS ESTUDIANTES-->
+                <Label Text="DATOS DE ESTUDIANTE:"
+                        FontSize="Large"
+                   FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name:"/>
+                    <Entry Placeholder="Name"
+                           Text="{Binding TextStudentName}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="LastName:"/>
+                    <Entry Placeholder="Apellido"
+                           Text="{Binding TextLastName}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Code:"/>
+                    <Entry Placeholder="code"
+                           Text="{Binding TextStudentCode}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Add"
+                            Command="{Binding AddStudentCommand}"/>
+                </StackLayout>
+            </StackLayout>
+            <ListView ItemsSource="{Binding Students}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding StudentName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="{Binding MessageStatus}"/>
+            <Button Text="Guardar"
+                    Command="{Binding SaveLaboratoryCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

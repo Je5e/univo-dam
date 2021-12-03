@@ -27,6 +27,6 @@ namespace Attendance.Models
         public Laboratory Laboratory { get; set; }
 
         [ManyToMany(typeof(StudentAttendance))]
-        public List<Attendance> AttendancesAt{ get; set; }
+        public List<Attendance> AttendancesAt { get; set; }
     }
 }

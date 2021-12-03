@@ -9,6 +9,7 @@ namespace Attendance.Models
     [Table("Attendances")]
     public class Attendance
     {
+        [PrimaryKey,AutoIncrement]
         public int Id { get; set; }
 
         public DateTime AttendanceDate { get; set; }
@@ -20,6 +21,6 @@ namespace Attendance.Models
         public Laboratory Laboratory { get; set; }
 
         [ManyToMany(typeof(StudentAttendance))]
-        public List<Student> Students { get; set; }
+        public List<Student> Students { get; set; } 
     }
 }
