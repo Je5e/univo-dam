@@ -1,6 +1,7 @@
 # Agregar El viewModel AddNewLaboratoryViewModel
 
-
+1. Crear la clase Viewmodel
+2. 
 ```c#
  public class AddNewLaboratoryViewModel
     {
@@ -102,3 +103,12 @@
                     Command="{Binding SaveLaboratoryCommand}"/>
         </StackLayout>
 ```
+
+-----------
+```c#
+  BindingContext =
+            new ViewModels.AddNewLaboratoryViewModel
+            (new Data.LaboratoryRepository
+            (Path.Combine(Environment.GetFolderPath
+            (Environment.SpecialFolder.LocalApplicationData), "AttendanceDb.db")));
+```            
