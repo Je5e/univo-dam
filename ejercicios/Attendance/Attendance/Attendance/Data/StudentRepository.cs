@@ -5,7 +5,7 @@ using System.Linq;
 using SQLiteNetExtensions.Extensions;
 using Attendance.Models;
 
-namespace Attendance
+namespace Attendance.Data
 {
     public class StudentRepository
     {
@@ -24,28 +24,29 @@ namespace Attendance
             conn.CreateTable<Models.StudentAttendance>();
         }
 
-        public void AddNewStudent(string name)
+        public void AddNewStudent(Student newStudent)
         {
             int result = 0;
             try
             {
                 //basic validation to ensure a name was entered
-                if (string.IsNullOrEmpty(name))
+                if (string.IsNullOrEmpty(newStudent.StudentName))
                     throw new Exception("Valid name required");
 
-                result = conn.Insert(new Models.Student { StudentName = name });
+                result = conn.Insert(new Models.Student
+                {
+                    StudentName = newStudent.StudentName,
+                    LastName = newStudent.LastName,
+                    StudentCode = newStudent.StudentCode,
 
-                StatusMessage = string.Format("{0} record(s) added [Name: {1})", result, name);
+                });
+
+                StatusMessage = string.Format("{0} record(s) added [Name: {1})", result, newStudent.StudentName);
             }
             catch (Exception ex)
             {
-                StatusMessage = string.Format("Failed to add {0}. Error: {1}", name, ex.Message);
+                StatusMessage = string.Format("Failed to add {0}. Error: {1}", newStudent.StudentName, ex.Message);
             }
-        }
-
-        public void UpdateLaboratoryWithChildren(Laboratory lab)
-        {
-            conn.UpdateWithChildren(lab);
         }
 
         public List<Models.Student> GetAllStudents()
@@ -59,7 +60,7 @@ namespace Attendance
                 StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
             }
 
-            return new List<Models.Student>();
+            return new List<Student>();
         }
     }
 }

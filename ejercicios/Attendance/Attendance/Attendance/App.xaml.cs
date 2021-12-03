@@ -1,5 +1,5 @@
 ﻿using Xamarin.Forms;
-
+using Attendance.Views;
 namespace Attendance
 {
     public partial class App : Application
