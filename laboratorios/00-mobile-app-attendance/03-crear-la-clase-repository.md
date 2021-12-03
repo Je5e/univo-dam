@@ -66,3 +66,49 @@ Para implementar el patrón Repository realiza lo suiente:
         }
     }
 ```
+
+3. Agregaremos otro repository **LabRepository.cs**
+
+```c#
+ public class LabRepository
+    {
+        public string MessageStatus { get; set; }
+        SQLiteConnection conn;
+
+        public LabRepository(string dbPath)
+        {
+            conn = new SQLiteConnection(dbPath);
+            conn.CreateTable<Student>();
+            conn.CreateTable<Laboratory>();
+        }
+
+        // TODO: Este método debe guardar objetos con hijos
+        public void AddNewLab(Laboratory newLab)
+        {
+            try
+            {
+
+                conn.InsertWithChildren(newLab, recursive: true); //
+                MessageStatus =
+                    $"Registro ingresado. Lab Id: {newLab.Id}, Name: {newLab.LabName}";
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageStatus = $"Error al guardar registro. Error: {ex.Message}";
+            }
+        }
+
+        public List<Laboratory> GetAll()
+        {
+            return conn.Table<Laboratory>().ToList();
+        }
+
+        public List<Laboratory> GetLaboratoriesWithStudents()
+        {
+            return conn.GetAllWithChildren<Laboratory>();
+        }
+    }
+ 
+```    
