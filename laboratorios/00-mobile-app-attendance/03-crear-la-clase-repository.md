@@ -88,7 +88,7 @@ Para implementar el patrón Repository realiza lo suiente:
             try
             {
 
-                conn.InsertWithChildren(newLab, recursive: true); //
+                conn.InsertWithChildren(newLab); //
                 MessageStatus =
                     $"Registro ingresado. Lab Id: {newLab.Id}, Name: {newLab.LabName}";
             }
