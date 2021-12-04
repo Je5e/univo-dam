@@ -1,7 +1,7 @@
 # Agregar El viewModel AddNewLaboratoryViewModel
 
-1. Crear la clase Viewmodel
-2. 
+1. Crear la clase Viewmodel **AddNewLaboratoryViewModel**
+
 ```c#
  public class AddNewLaboratoryViewModel
     {
@@ -54,7 +54,7 @@
     }
 ```    
 
-2. La vista del viewModel
+2. La vista del viewModel **AddNewLaboratoryViewModel**
 
 ```xaml
 <StackLayout>
@@ -105,6 +105,7 @@
 ```
 
 -----------
+Abre el archivo **AddNewLaboratoryViewModel.xaml.cs** y agrega el siuiente código dentro del constructor de la clase, justo depues de la llamada al método **InitializeComponent**
 ```c#
   BindingContext =
             new ViewModels.AddNewLaboratoryViewModel
