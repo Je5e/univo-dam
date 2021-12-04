@@ -1,4 +1,4 @@
-# Agregar El viewModel AddNewLaboratoryViewModel
+# Agregar el ViewModel AddNewLaboratoryViewModel
 
 1. Crear la clase Viewmodel **AddNewLaboratoryViewModel**
 
