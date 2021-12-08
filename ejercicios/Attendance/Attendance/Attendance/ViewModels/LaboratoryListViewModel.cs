@@ -49,6 +49,18 @@ namespace Attendance.ViewModels
                 OnPropertyChanged();
             }
         }
+        private string Status_BF;
+
+        public string Status
+        {
+            get { return Status_BF; }
+            set
+            { 
+                Status_BF = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         private List<Laboratory> Laboratories_BF;
 

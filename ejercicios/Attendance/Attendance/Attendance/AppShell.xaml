@@ -12,6 +12,9 @@
         <ShellContent Title="Laboratories"
                       Icon="icon_about.png"
                       ContentTemplate="{DataTemplate local:LaboratoriesPage}" />
+        <ShellContent Title="Asistencia"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate local:RegisterAttendancePage}" />
     </TabBar>
 
 

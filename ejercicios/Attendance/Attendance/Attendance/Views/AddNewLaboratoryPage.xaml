@@ -20,7 +20,7 @@
                     <Label Text="Name:"/>
                     <Entry Placeholder="Name"
                            Text="{Binding TextStudentName}"/>
-                </StackLayout>
+                </StackLayout>  
                 <StackLayout Orientation="Horizontal">
                     <Label Text="LastName:"/>
                     <Entry Placeholder="Apellido"
@@ -44,7 +44,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Label Text="{Binding MessageStatus}"/>
+            <Label Text="{Binding Status}"/>
             <Button Text="Guardar"
                     Command="{Binding SaveLaboratoryCommand}"/>
         </StackLayout>
