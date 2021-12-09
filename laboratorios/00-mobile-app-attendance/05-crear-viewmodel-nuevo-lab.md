@@ -105,7 +105,7 @@
 ```
 
 -----------
-Abre el archivo **AddNewLaboratoryViewModel.xaml.cs** y agrega el siuiente código dentro del constructor de la clase, justo depues de la llamada al método **InitializeComponent**
+Abre el archivo **AddNewLaboratoryPage.xaml.cs** y agrega el siguiente código dentro del constructor de la clase, justo depues de la llamada al método **InitializeComponent**
 ```c#
   BindingContext =
             new ViewModels.AddNewLaboratoryViewModel
