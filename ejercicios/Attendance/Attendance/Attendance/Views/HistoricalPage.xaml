@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:behaviors="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack" 
-             x:Class="Attendance.Views.RegisterAttendancePage">
+             xmlns:behaviors="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack" 
+             x:Class="Attendance.Views.HistoricalPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Laboratories}"
+            <ListView ItemsSource="{Binding Labs}"
                       SelectedItem="{Binding SelectedLaboratory}">
                 <ListView.Behaviors>
                     <behaviors:EventToCommandBehavior 
                         EventName="ItemSelected" 
-                        Command="{Binding ShowStudentsOfLaboratorySelectedCommand}"/>
+                        Command="{Binding ShowAttendancesOfLaboratorySelectedCommand}"/>
                 </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -19,9 +19,21 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Text="Students:"
-                   FontSize="Large"
-                   FontAttributes="Bold"/>
+            <Label Text="FECHAS:"/>
+            <ListView ItemsSource="{Binding Attendances}"
+                      SelectedItem="{Binding SelectedAttendance}">
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior 
+                        EventName="ItemSelected" 
+                        Command="{Binding ShowStudentsCommand}"/>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding AttendanceDate}"
+                                  Detail="{Binding Id}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <ListView ItemsSource="{Binding Students}">
 
                 <ListView.ItemTemplate>
@@ -31,9 +43,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Text="{Binding StatusMessage}"/>
-            <Button Text="Guardar Asistencia"
-                    Command="{Binding RegisterAttendanceCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

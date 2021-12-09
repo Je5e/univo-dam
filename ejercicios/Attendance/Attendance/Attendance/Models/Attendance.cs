@@ -12,7 +12,8 @@ namespace Attendance.Models
         [PrimaryKey,AutoIncrement]
         public int Id { get; set; }
 
-        public DateTime AttendanceDate { get; set; }
+        [Unique]
+        public string AttendanceDate { get; set; }
 
         [ForeignKey(typeof(Laboratory))]
         public int LaboratoryId { get; set; }
@@ -21,6 +22,6 @@ namespace Attendance.Models
         public Laboratory Laboratory { get; set; }
 
         [ManyToMany(typeof(StudentAttendance))]
-        public List<Student> Students { get; set; } 
+        public List<Student> Students { get; set; } = new List<Student>(); 
     }
 }

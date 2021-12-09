@@ -17,11 +17,13 @@ namespace Attendance.ViewModels
         {
             Repository = repository;
 
-            AddStudentCommand = new Command(AddStudentToList);
+            AddStudentCommand = new Command(AddStudentToList, canExecuteAddStudentToList);
             SaveLaboratoryCommand = new Command(SaveNewLaboratory, canExecute);
 
             Students = new ObservableCollection<Student>();
         }
+
+        private bool canExecuteAddStudentToList(object arg) => !string.IsNullOrEmpty(TextStudentName) && !string.IsNullOrEmpty(TextLastName) && !string.IsNullOrEmpty(TextStudentCode);
 
         private bool canExecute(object obj) => !string.IsNullOrEmpty(LabName);
 
@@ -41,7 +43,7 @@ namespace Attendance.ViewModels
 
         }
 
-        private void AddStudentToList()
+        private void AddStudentToList(object obj)
         {
             Students.Add(new Student // TODO: detalle.
             {
@@ -49,6 +51,10 @@ namespace Attendance.ViewModels
                 LastName = TextLastName,
                 StudentCode = TextStudentCode
             });
+            TextStudentName = string.Empty;
+            TextLastName = string.Empty;
+            TextStudentCode = string.Empty;
+
         }
 
         #region Properties
@@ -59,9 +65,10 @@ namespace Attendance.ViewModels
         private void CleanValues()
         {
             LabName = string.Empty;
-            TextLastName = string.Empty;
+            TextStudentName = string.Empty;
             TextLastName = string.Empty;
             TextStudentCode = string.Empty;
+            Students.Clear();
         }
         public string Status
         {
@@ -74,7 +81,14 @@ namespace Attendance.ViewModels
             }
         }
 
-        public ObservableCollection<Student> Students { get; set; }
+        private ObservableCollection<Student> Students_BF;
+
+        public ObservableCollection<Student> Students
+        {
+            get { return Students_BF; }
+            set { Students_BF = value;OnPropertyChanged(); }
+        }
+
         private string LabName_BF;
 
         public string LabName
@@ -83,10 +97,31 @@ namespace Attendance.ViewModels
             set { LabName_BF = value; OnPropertyChanged(); SaveLaboratoryCommand.ChangeCanExecute(); }
         }
 
-        public string TextStudentName { get; set; }
-        public string TextLastName { get; set; }
+        private string TextStudentName_BF;
 
-        public string TextStudentCode { get; set; }
+        public string TextStudentName
+        {
+            get { return TextStudentName_BF; }
+            set { TextStudentName_BF = value;OnPropertyChanged(); AddStudentCommand.ChangeCanExecute(); }
+        }
+
+        private string TextLastName_BF;
+
+        public string TextLastName
+        {
+            get { return TextLastName_BF; }
+            set { TextLastName_BF = value; OnPropertyChanged(); AddStudentCommand.ChangeCanExecute(); }
+        }
+
+
+        private string TextStudentCode_BF;
+
+        public string TextStudentCode
+        {
+            get { return TextStudentCode_BF; }
+            set { TextStudentCode_BF = value; OnPropertyChanged(); AddStudentCommand.ChangeCanExecute(); }
+        }
+
         #endregion
 
         #region Commands
@@ -100,7 +135,6 @@ namespace Attendance.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
 
         #endregion
     }

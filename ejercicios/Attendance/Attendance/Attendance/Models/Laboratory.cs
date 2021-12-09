@@ -23,6 +23,6 @@ namespace Attendance.Models
 
         [OneToMany(CascadeOperations = CascadeOperation.CascadeInsert |
             CascadeOperation.CascadeDelete)]
-        public List<Attendance> Attendances { get; set; } 
+        public List<Attendance> Attendances { get; set; } = new List<Attendance>();
     }
 }

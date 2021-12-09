@@ -40,9 +40,67 @@ namespace Attendance.Data
             }
         }
 
+        //Crear una nueva asistencia.
+        public void AddNewAttendance(Models.Attendance attendance)
+        {
+            try
+            {
+
+                conn.InsertWithChildren(attendance, recursive: true); //
+                MessageStatus =
+                    $"Registro ingresado. Attendance Id: {attendance.Id}, Date: {attendance.AttendanceDate}";
+            }
+
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateLaboratoryWithChildren(Laboratory toUpdate)
+        {
+            try
+            {
+
+                conn.UpdateWithChildren(toUpdate); //
+                MessageStatus =
+                    $"Registro Actualizado. Laboratory Id: {toUpdate.Id}, Date: {toUpdate.LabName}";
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageStatus = $"Error al guardar registro. Error: {ex.Message}";
+            }
+        }
+
+        //Registrar la asistencia.
+        public void UpdateAttendanceWithChildren(Models.Attendance a)
+        {
+            try
+            {
+
+                conn.UpdateWithChildren(a); //
+                MessageStatus =
+                    $"Registro Actualizado. Attendance Id: {a.Id}, Date: {a.AttendanceDate}";
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageStatus = $"Error al guardar registro. Error: {ex.Message}";
+            }
+        }
+
         public List<Laboratory> GetAll()
         {
             return conn.Table<Laboratory>().ToList();
+        }
+
+        public Models.Attendance GetAttendanceWithChildren(int id)
+        {
+            return conn.GetWithChildren<Models.Attendance>(id);
         }
 
         public List<Laboratory> GetLaboratoriesWithStudents()

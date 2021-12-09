@@ -11,16 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace Attendance.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegisterAttendancePage : ContentPage
+    public partial class HistoricalPage : ContentPage
     {
-        public RegisterAttendancePage()
+        public HistoricalPage()
         {
             InitializeComponent();
             BindingContext =
-           new ViewModels.RegisterAttendanceViewModel
-           (new Data.LabRepository
-           (Path.Combine(Environment.GetFolderPath
-           (Environment.SpecialFolder.LocalApplicationData), "AttendanceDb.db")));
+          new ViewModels.HistocialViewModel
+          (new Data.LabRepository
+          (Path.Combine(Environment.GetFolderPath
+          (Environment.SpecialFolder.LocalApplicationData), "AttendanceDb.db")));
         }
     }
 }

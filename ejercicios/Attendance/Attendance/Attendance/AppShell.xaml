@@ -15,6 +15,9 @@
         <ShellContent Title="Asistencia"
                       Icon="icon_about.png"
                       ContentTemplate="{DataTemplate local:RegisterAttendancePage}" />
+        <ShellContent Title="Historial"
+                      Icon="icon_feed.png"
+                      ContentTemplate="{DataTemplate local:HistoricalPage}" />
     </TabBar>
 
 

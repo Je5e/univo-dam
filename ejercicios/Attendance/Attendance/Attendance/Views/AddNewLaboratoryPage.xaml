@@ -16,23 +16,23 @@
                 <Label Text="DATOS DE ESTUDIANTE:"
                         FontSize="Large"
                    FontAttributes="Bold"/>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                     <Label Text="Name:"/>
                     <Entry Placeholder="Name"
                            Text="{Binding TextStudentName}"/>
                 </StackLayout>  
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                     <Label Text="LastName:"/>
                     <Entry Placeholder="Apellido"
                            Text="{Binding TextLastName}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                     <Label Text="Code:"/>
                     <Entry Placeholder="code"
                            Text="{Binding TextStudentCode}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Add"
+                <StackLayout Orientation="Vertical">
+                    <Button Text="Add Student"
                             Command="{Binding AddStudentCommand}"/>
                 </StackLayout>
             </StackLayout>
