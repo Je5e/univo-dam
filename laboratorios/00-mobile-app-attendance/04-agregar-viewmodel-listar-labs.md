@@ -1,4 +1,4 @@
-# En este ejercicio vamoa a agregar un ViewModel para la page Lista de laboratorios.
+# En este ejercicio vamos a agregar un ViewModel para la view Lista de laboratorios.
 
 1. En la aplicación agrega una nueva carpeta llamada **ViewModels**
 
