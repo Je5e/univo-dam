@@ -54,7 +54,7 @@
     }
 ```    
 
-2. La vista del viewModel **AddNewLaboratoryViewModel**
+2. La vista del viewModel **AddNewLaboratoryViewModel** se llamara **AddNewLaboratoryPage** y la vamos a crear en la carpeta **Views**
 
 ```xaml
 <StackLayout>
