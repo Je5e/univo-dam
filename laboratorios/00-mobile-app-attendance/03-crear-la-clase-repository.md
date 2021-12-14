@@ -6,7 +6,7 @@ El patrón de diseño **Repository** nos permite abstraer la lógica para accede
 Para implementar el patrón Repository realiza lo suiente:
 
 1. Agrega un nuevo folder en el proyecto, nombralo **Data**.
-2. Dentro de **Data** agrega una nueva clase, nombrala **StudentRepository**,esta clase repository encapsulará la lógica de acceso a datos de la clase modelo *Student*
+2. Dentro de **Data** agrega una nueva clase, nombrala **StudentRepository**, esta clase repository encapsulará la lógica de acceso a datos de la clase modelo *Student*
 
 ```c#
  public class StudentRepository
