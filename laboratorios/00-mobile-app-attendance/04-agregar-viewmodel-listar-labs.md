@@ -49,3 +49,5 @@ public class LaboratoryListViewModel
 4. En la carpeta **Views** agrega una **página de contenido** (Content Page), y asignale el nombre de **LaboratoryListPage**
 
 
+Con esto finalizamos nuestra viewModel y la vista.
+
