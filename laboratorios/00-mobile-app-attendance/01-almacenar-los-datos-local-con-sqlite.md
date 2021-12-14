@@ -6,7 +6,7 @@ Vamos a crear un **repositorio con SQlite** que nos permitirá registrar a los e
 Vamos a crear una clase modelo que es usada para definir el esquema de la base de datos.
 
 1. Agregar un folder llamado **Models** en el proyecto *Attendance*
-2. En el folder **Models** creareamos una **clase** llamada **Student**. Nos aseguramos qe sea marcada como *public*
+2. En el folder **Models** creareamos una **clase** llamada **Student**. Nos aseguramos que sea marcada como *public*
 
 ```c#
 namespace Attendance.Models
