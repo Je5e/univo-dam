@@ -66,3 +66,23 @@ namespace Attendance.Models
         public DateTime AttendanceDate { get; set; }       
     }
 ```
+8. En el folder **Models** crea una clase llamada **StudentAttendance**. Asegúrate de marcar la clase como *public*
+```c#
+namespace Attendance.Models
+{
+    public class StudentAttendance
+    {
+    }
+}
+```
+
+9. Agrega las siguientes propiedades a la clase **StudentAttendance**
+```c#
+ public class StudentAttendance
+    {        
+            public int StudentId { get; set; }
+            public int AttendancesId { get; set; }
+
+    }
+```
+
