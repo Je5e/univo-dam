@@ -3,7 +3,7 @@
 
 ![behaviorsPack](https://user-images.githubusercontent.com/45072377/144543286-1b852822-81d4-42f7-a5a1-ad0f7bd55f04.png)
 
-6. En el archivo **LaboratoryListPage.xaml** agrega el siguiente marcado xaml.
+2. En el archivo **LaboratoryListPage.xaml** agrega el siguiente marcado xaml.
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
